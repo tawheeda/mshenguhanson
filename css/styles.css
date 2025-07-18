@@ -282,13 +282,13 @@ footer .copyright {
 
     .footer-container {
         flex-direction: column;
-        text-align: center;
+        text-align: left;
     }
 
     .footer-left,
     .footer-right {
         margin: 5px 0;
-        text-align: center;
+        text-align: left;
     }
 
     .banner-text h1 {
