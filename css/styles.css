@@ -42,7 +42,7 @@ nav a.active {
     border-bottom: 2px solid #0284c7;
 }
 
-/* === MOBILE NAVIGATION === */
+/* === MOBILE MENU ICON === */
 .mobile-menu-icon {
     display: none;
     font-size: 1.8em;
@@ -54,6 +54,7 @@ nav a.active {
     .mobile-menu-icon {
         display: block;
     }
+
     nav {
         display: none;
         flex-direction: column;
@@ -64,9 +65,11 @@ nav a.active {
         width: 100%;
         z-index: 999;
     }
+
     nav.active {
         display: flex;
     }
+
     nav a {
         margin: 0;
         padding: 15px;
@@ -247,7 +250,7 @@ footer .copyright {
     text-align: center;
 }
 
-/* === SLIDESHOW UPDATED === */
+/* === SLIDESHOW === */
 .slideshow-container {
     position: relative;
     max-width: 1000px;
@@ -320,20 +323,14 @@ footer .copyright {
     }
 
     .footer-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        max-width: 1000px;
-        margin: 0 auto 10px auto;
-    }
-
-    .footer-left {
+        flex-direction: column;
         text-align: left;
-        padding-right: 10px;
     }
 
+    .footer-left,
     .footer-right {
-        text-align: right;
-        padding-left: 10px;
+        margin: 5px 0;
+        text-align: left;
     }
 
     .banner-text h1 {
