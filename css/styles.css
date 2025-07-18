@@ -32,36 +32,56 @@ header {
 header .logo {
     height: 50px;
 }
-.mobile-menu-icon {
+
+/* Replace .mobile-menu-icon with .menu-toggle */
+.menu-toggle {
     display: none;
     font-size: 2rem;
     cursor: pointer;
+    background: none;
+    border: none;
+    color: #fff;
 }
+
+/* Nav styles */
 nav {
     display: flex;
     gap: 1rem;
 }
-nav a {
+
+/* Change nav from flex to block on mobile and toggle visibility by .active on nav-links */
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.nav-links li a {
     color: #fff;
     padding: 0.5rem 1rem;
-}
-nav a.active {
-    background-color: #026aa7;
-    color: #fff;
+    display: block;
     border-radius: 5px;
 }
 
-nav a:hover {
+.nav-links li a.active {
+    background-color: #026aa7;
+    color: #fff;
+}
+
+.nav-links li a:hover {
     background-color: #d98c00;
     color: #fff;
 }
 
 /* Responsive Menu */
 @media (max-width: 768px) {
-    .mobile-menu-icon {
+    .menu-toggle {
         display: block;
     }
-    nav {
+
+    .nav-links {
         display: none;
         flex-direction: column;
         background-color: #012B44;
@@ -69,12 +89,20 @@ nav a:hover {
         top: 100%;
         right: 0;
         width: 100%;
-        padding: 1rem;
+        padding: 1rem 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        z-index: 999;
     }
-    header.active nav {
+
+    .nav-links.active {
         display: flex;
     }
+
+    .nav-links li {
+        margin: 0.5rem 1.5rem;
+    }
 }
+
 
 .card {
   background: #fff;
