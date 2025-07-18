@@ -281,14 +281,20 @@ footer .copyright {
     }
 
     .footer-container {
-        flex-direction: column;
-        text-align: left; /* enforce left alignment */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 1000px;
+        margin: 0 auto 10px auto;
     }
 
-    .footer-left,
+    .footer-left {
+        text-align: left;
+        padding-right: 10px;
+    }
+
     .footer-right {
-        margin: 5px 0;
-        text-align: left; /* enforce left alignment */
+        text-align: right;
+        padding-left: 10px;
     }
 
     .banner-text h1 {
