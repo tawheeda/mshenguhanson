@@ -22,20 +22,29 @@ img {
 /* Header & Navigation */
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 1rem 2rem;
     background-color: #012B44;
     color: #fff;
     position: relative;
-    flex-wrap: wrap; /* allow wrapping if needed */
+    flex-wrap: nowrap;
 }
 
-header .logo {
+/* Logo outside nav now */
+.logo img {
     height: 50px;
-    flex-shrink: 0;         /* Prevent shrinking */
-    max-width: 150px;       /* Limit max width */
     display: block;
+    max-width: 150px;
+}
+
+/* Nav styles */
+nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Take remaining space */
+    justify-content: flex-end;
+    min-width: 0; /* Prevent overflow */
 }
 
 /* Menu toggle button */
@@ -46,19 +55,11 @@ header .logo {
     background: none;
     border: none;
     color: #fff;
+    margin-left: 1rem;
     flex-shrink: 0;
 }
 
-/* Navigation */
-nav {
-    display: flex;
-    gap: 1rem;
-    flex-grow: 1;          /* Nav takes available space */
-    justify-content: flex-end; /* Align nav items right */
-    min-width: 0;          /* Prevent overflow issues */
-}
-
-/* Nav links container as ul */
+/* Nav links */
 .nav-links {
     display: flex;
     gap: 1rem;
@@ -73,7 +74,7 @@ nav {
     padding: 0.5rem 1rem;
     display: block;
     border-radius: 5px;
-    white-space: nowrap; /* prevent wrapping of links */
+    white-space: nowrap;
 }
 
 .nav-links li a.active {
@@ -86,14 +87,16 @@ nav {
     color: #fff;
 }
 
-/* Responsive Menu */
+/* Responsive */
 @media (max-width: 768px) {
-    /* Show menu toggle button */
     .menu-toggle {
         display: block;
     }
 
-    /* Hide nav links by default */
+    nav {
+        justify-content: flex-start;
+    }
+
     .nav-links {
         display: none;
         flex-direction: column;
@@ -107,20 +110,12 @@ nav {
         z-index: 999;
     }
 
-    /* Show nav links when active */
     .nav-links.active {
         display: flex;
     }
 
-    /* Spacing for nav items on mobile */
     .nav-links li {
         margin: 0.5rem 1.5rem;
-    }
-
-    /* Prevent nav from growing too large on mobile */
-    nav {
-        width: 100%;
-        justify-content: flex-start;
     }
 }
 
