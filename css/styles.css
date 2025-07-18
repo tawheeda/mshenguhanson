@@ -46,9 +46,14 @@ nav a {
     padding: 0.5rem 1rem;
 }
 nav a.active {
-    background-color: #F2A900;
-    color: #012B44;
+    background-color: #026aa7;
+    color: #fff;
     border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #d98c00;
+    color: #fff;
 }
 
 /* Responsive Menu */
@@ -69,6 +74,21 @@ nav a.active {
     header.active nav {
         display: flex;
     }
+}
+
+.card {
+  background: #fff;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  border-left: 6px solid #F2A900;
+}
+
+.card h2 {
+  color: #012B44;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 /* Tiles */
@@ -95,12 +115,56 @@ nav a.active {
     }
 }
 
-/* Banner Image */
+/* Banner Image Section */
 .banner-image {
+    position: relative;
     width: 100%;
     max-height: 500px;
-    object-fit: cover;
+    overflow: hidden;
 }
+
+.banner-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Text and Button on Banner */
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+    background-color: rgba(1, 43, 68, 0.6); /* optional overlay */
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.banner-text h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.banner-text .btn {
+    background-color: #026aa7;
+    color: #012B44;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.banner-text .btn:hover {
+    background-color: #d98c00;
+}
+
 
 /* Slideshow */
 .slideshow-container {
@@ -115,8 +179,12 @@ nav a.active {
 }
 .slide img {
     width: 100%;
+    max-height: 500px;
+    object-fit: cover;
     border-radius: 8px;
+    display: block;
 }
+
 .caption {
     position: absolute;
     bottom: 15px;
@@ -156,4 +224,14 @@ footer {
 }
 footer a {
     color: #F2A900;
+}
+
+@media (max-width: 600px) {
+    .slide img {
+        max-height: 250px;
+    }
+    .caption {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
 }
