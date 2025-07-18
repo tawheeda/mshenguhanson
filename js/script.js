@@ -4,6 +4,11 @@ function toggleMenu() {
     header.classList.toggle("active");
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    const menuIcon = document.querySelector(".mobile-menu-icon");
+    menuIcon.addEventListener("click", toggleMenu);
+});
+
 // Slideshow logic
 let slideIndex = 1;
 showSlides(slideIndex);
