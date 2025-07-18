@@ -28,12 +28,17 @@ header {
     background-color: #012B44;
     color: #fff;
     position: relative;
-}
-header .logo {
-    height: 50px;
+    flex-wrap: wrap; /* allow wrapping if needed */
 }
 
-/* Replace .mobile-menu-icon with .menu-toggle */
+header .logo {
+    height: 50px;
+    flex-shrink: 0;         /* Prevent shrinking */
+    max-width: 150px;       /* Limit max width */
+    display: block;
+}
+
+/* Menu toggle button */
 .menu-toggle {
     display: none;
     font-size: 2rem;
@@ -41,21 +46,26 @@ header .logo {
     background: none;
     border: none;
     color: #fff;
+    flex-shrink: 0;
 }
 
-/* Nav styles */
+/* Navigation */
 nav {
     display: flex;
     gap: 1rem;
+    flex-grow: 1;          /* Nav takes available space */
+    justify-content: flex-end; /* Align nav items right */
+    min-width: 0;          /* Prevent overflow issues */
 }
 
-/* Change nav from flex to block on mobile and toggle visibility by .active on nav-links */
+/* Nav links container as ul */
 .nav-links {
     display: flex;
     gap: 1rem;
     list-style: none;
     padding-left: 0;
     margin: 0;
+    align-items: center;
 }
 
 .nav-links li a {
@@ -63,6 +73,7 @@ nav {
     padding: 0.5rem 1rem;
     display: block;
     border-radius: 5px;
+    white-space: nowrap; /* prevent wrapping of links */
 }
 
 .nav-links li a.active {
@@ -77,10 +88,12 @@ nav {
 
 /* Responsive Menu */
 @media (max-width: 768px) {
+    /* Show menu toggle button */
     .menu-toggle {
         display: block;
     }
 
+    /* Hide nav links by default */
     .nav-links {
         display: none;
         flex-direction: column;
@@ -94,16 +107,24 @@ nav {
         z-index: 999;
     }
 
+    /* Show nav links when active */
     .nav-links.active {
         display: flex;
     }
 
+    /* Spacing for nav items on mobile */
     .nav-links li {
         margin: 0.5rem 1.5rem;
     }
+
+    /* Prevent nav from growing too large on mobile */
+    nav {
+        width: 100%;
+        justify-content: flex-start;
+    }
 }
 
-
+/* Card styling */
 .card {
   background: #fff;
   padding: 2rem;
@@ -192,7 +213,6 @@ nav {
 .banner-text .btn:hover {
     background-color: #d98c00;
 }
-
 
 /* Slideshow */
 .slideshow-container {
