@@ -16,7 +16,7 @@ header {
 }
 
 header .logo {
-    height: 55px;
+    height: 50px;
 }
 
 nav {
@@ -61,9 +61,9 @@ nav a.active {
         background: #012B44;
         position: absolute;
         top: 100%;
-        right: 0;
+        left: 0;
         width: 100%;
-        z-index: 999;
+        z-index: 1000;
     }
 
     nav.active {
@@ -99,13 +99,13 @@ nav a.active {
     transform: translate(-50%, -50%);
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 15px;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 8px;
 }
 
 .banner-text h1 {
-    font-size: 2.4em;
+    font-size: 2em;
     margin: 0 0 10px 0;
     letter-spacing: 1px;
 }
@@ -126,66 +126,67 @@ nav a.active {
 }
 
 main {
-    padding: 30px 20px;
+    padding: 20px 15px;
 }
 
 main section {
     background: white;
-    padding: 30px 25px;
-    margin: 30px auto;
+    padding: 25px 20px;
+    margin: 20px auto;
     max-width: 1000px;
     border-radius: 10px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 }
 
 main section h2 {
     color: #024f82;
     border-left: 5px solid #F2A900;
-    padding-left: 12px;
-    margin-bottom: 18px;
-    font-size: 1.6em;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    font-size: 1.4em;
 }
 
 main section p {
-    line-height: 1.7;
+    line-height: 1.6;
     color: #2a2a2a;
+    font-size: 0.95em;
 }
 
 /* === TILE STYLING === */
 .tiles {
     display: flex;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 20px;
     justify-content: center;
-    margin: 30px auto;
+    margin: 20px auto;
     max-width: 1000px;
 }
 
 .tile {
-    flex: 1 1 280px;
+    flex: 1 1 260px;
     background: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    padding: 20px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .tile:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
 .tile h3 {
     color: #012B44;
-    margin-bottom: 12px;
-    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-size: 1.1em;
 }
 
 .tile p {
     color: #444;
-    font-size: 0.95em;
-    line-height: 1.6;
+    font-size: 0.9em;
+    line-height: 1.5;
 }
 
 /* === GRID-TWO === */
@@ -196,68 +197,43 @@ main section p {
 }
 
 .grid-two > div {
-    flex: 1 1 300px;
+    flex: 1 1 280px;
     background: white;
     padding: 20px;
     border-radius: 8px;
 }
 
-/* === FOOTER === */
+/* === BASIC FOOTER === */
 footer {
     background: #012B44;
     color: white;
     text-align: center;
-    padding: 25px 20px;
+    padding: 20px 15px;
 }
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: 0 auto 10px auto;
+footer p {
+    margin: 8px 0;
+    line-height: 1.6;
+    font-size: 0.95em;
 }
 
-.footer-left {
-    flex: 1 1 300px;
-    margin: 10px;
-    text-align: left;
-}
-
-.footer-right {
-    flex: 1 1 300px;
-    margin: 10px;
-    text-align: right;
-}
-
-.footer-right p,
-.footer-left p {
-    margin: 5px 0;
-}
-
-.footer-right a {
+footer a {
     color: #F2A900;
     text-decoration: none;
 }
 
-.footer-right a:hover {
+footer a:hover {
     text-decoration: underline;
-}
-
-footer .copyright {
-    font-size: 0.85em;
-    margin-top: 12px;
-    text-align: center;
 }
 
 /* === SLIDESHOW === */
 .slideshow-container {
     position: relative;
     max-width: 1000px;
-    margin: 30px auto;
+    margin: 20px auto;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .slide {
@@ -267,7 +243,7 @@ footer .copyright {
 .slide img {
     width: 100%;
     height: auto;
-    max-height: 500px;
+    max-height: 450px;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
 }
@@ -279,11 +255,9 @@ footer .copyright {
     background: rgba(0, 0, 0, 0.5);
     color: white;
     text-align: center;
-    padding: 15px 20px;
-    font-size: 1em;
-    line-height: 1.5;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    padding: 12px 15px;
+    font-size: 0.95em;
+    line-height: 1.4;
 }
 
 .prev,
@@ -293,56 +267,44 @@ footer .copyright {
     top: 50%;
     transform: translateY(-50%);
     color: white;
-    font-size: 30px;
+    font-size: 28px;
     font-weight: bold;
-    padding: 16px;
+    padding: 12px;
     background: rgba(0, 0, 0, 0.4);
     border-radius: 50%;
     user-select: none;
 }
 
 .next {
-    right: 20px;
+    right: 15px;
 }
 .prev {
-    left: 20px;
+    left: 15px;
 }
 
-/* === RESPONSIVE === */
+/* === RESPONSIVE CLEANUP === */
 @media (max-width: 768px) {
-    .tiles {
-        flex-direction: column;
-        align-items: center;
+    .banner-text h1 {
+        font-size: 1.6em;
     }
 }
 
 @media (max-width: 600px) {
-    .grid-two,
-    .tiles {
-        flex-direction: column;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        text-align: left;
-    }
-
-    .footer-left,
-    .footer-right {
-        margin: 5px 0;
-        text-align: left;
-    }
-
-    .banner-text h1 {
-        font-size: 1.6em;
+    .slide img {
+        max-height: 280px;
     }
 
     .caption {
-        font-size: 0.9em;
-        padding: 10px 15px;
+        font-size: 0.85em;
+        padding: 8px 10px;
     }
 
-    .slide img {
-        max-height: 300px;
+    .tile {
+        flex: 1 1 100%;
+    }
+
+    .grid-two,
+    .tiles {
+        flex-direction: column;
     }
 }
