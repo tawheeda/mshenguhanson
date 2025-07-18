@@ -1,17 +1,26 @@
+let slideIndex = 1; // Initialize slideIndex first
+
 document.addEventListener("DOMContentLoaded", () => {
   // Mobile menu toggle
   const menuToggle = document.querySelector(".menu-toggle");
   const navLinks = document.querySelector(".nav-links");
 
   if (menuToggle && navLinks) {
+    // Initialize aria-expanded attribute if not set
+    if (!menuToggle.hasAttribute("aria-expanded")) {
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+
     menuToggle.addEventListener("click", () => {
       navLinks.classList.toggle("active");
-      // Optional: toggle aria-expanded for accessibility
+      // Toggle aria-expanded for accessibility
       const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-      menuToggle.setAttribute("aria-expanded", !expanded);
+      menuToggle.setAttribute("aria-expanded", String(!expanded));
     });
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
+    // Cache links inside navLinks
+    const links = navLinks.querySelectorAll("a");
+    links.forEach(link => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("active");
         menuToggle.setAttribute("aria-expanded", "false");
@@ -19,13 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Slideshow logic initialization
+  // Slideshow logic initialization if slides exist
   if (document.getElementsByClassName("slide").length > 0) {
     showSlides(slideIndex);
   }
 });
-
-let slideIndex = 1;
 
 function plusSlides(n) {
   showSlides(slideIndex += n);
