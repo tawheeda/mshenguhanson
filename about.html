@@ -8,17 +8,18 @@
 <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+
 <header>
     <a href="index.html">
         <img src="images/logo.png" alt="Mshengu Hanson Logo" class="logo">
     </a>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html" class="active">About Us</a>
-    <a href="services.html">Services</a>
-    <a href="projects.html">Projects</a>
-</nav>
-
+    <div class="mobile-menu-icon" onclick="toggleMenu()">☰</div>
+    <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+    </nav>
 </header>
 
 <main>
@@ -32,7 +33,7 @@
             its intention to provide high quality service and excellence. 
             Mshengu Hanson is led by experienced and hands-on engineers and 
             technicians with a wide range of skills in the built and technical 
-            environment. The company prides itself of employing only the best 
+            environment. The company prides itself on employing only the best 
             technical resources from the built and technical environment 
             industry to provide the best possible service for its clients. 
         </p>
@@ -82,12 +83,16 @@
     </div>
     <p class="copyright">
       &copy; 2025 Mshengu Hanson Engineering and Projects (Pty) Ltd | Website Developed & Managed by 
-      <a href="https://tawheeda.github.io/tawheedaa" 
-      style="color: #ffffff; text-decoration: none;">LT Dev Studio</a>  In Collaboration with InfoTech Solutions (Pty) Ltd.
+      <a href="https://tawheeda.github.io/tawheedaa" style="color: #ffffff; text-decoration: none;">LT Dev Studio</a> in collaboration with InfoTech Solutions (Pty) Ltd.
     </p>
 </footer>
 
-
+<script>
+function toggleMenu() {
+    const nav = document.getElementById('nav-menu');
+    nav.classList.toggle('active');
+}
+</script>
 
 <script src="js/script.js"></script>
 </body>
